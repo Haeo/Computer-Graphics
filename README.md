@@ -1,7 +1,7 @@
 # Computer-Graphics
 ### Computer-Graphics homework
 
-DDA
-Bresenham
-Draw Circle
-Draw Ellipse
+- DDA
+- Bresenham
+- Draw Circle
+- Draw Ellipse
