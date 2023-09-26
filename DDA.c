@@ -11,7 +11,7 @@ int linepattern[3][8] = { 1,1,1,1,1,1,1,1,
 						1,1,1,1,0,0,0,0,
 						1,0,1,0,1,0,1,0 };
 
-void lineDDA(int x1, int y1, int x2, int y2)
+void lineDDA(int x1, int y1, int x2, int y2, int r, int g, int b, int patt)
 {
 	int dx = x2 - x1, dy = y2 - y1, step, k;
 	float xinc, yinc, x = (float)x1, y = (float)y1;
@@ -21,19 +21,19 @@ void lineDDA(int x1, int y1, int x2, int y2)
 	xinc = dx / (float)step;
 	yinc = dy / (float)step;
 
-	Iarray[x1][y1][0] = 255;// start pixel marking(setpixel function)
-	Iarray[x1][y1][1] = 0;
-	Iarray[x1][y1][2] = 255;
+	Iarray[x1][y1][0] = r;// start pixel marking(setpixel function)
+	Iarray[x1][y1][1] = g;
+	Iarray[x1][y1][2] = b;
 
 	int i = 0;
 	for (k = 0; k < step; k++) {
 		x += xinc;
 		y += yinc;
 		
-		if (linepattern[1][i] == 1) {
-			Iarray[(int)(x + 0.5)][(int)(y + 0.5)][0] = 255 * linepattern[1][i];// marking(setpixel function)
-			Iarray[(int)(x + 0.5)][(int)(y + 0.5)][1] = 0 * linepattern[1][i];
-			Iarray[(int)(x + 0.5)][(int)(y + 0.5)][2] = 255 * linepattern[1][i];
+		if (linepattern[patt][i] == 1) {
+			Iarray[(int)(x + 0.5)][(int)(y + 0.5)][0] = r * linepattern[patt][i];// marking(setpixel function)
+			Iarray[(int)(x + 0.5)][(int)(y + 0.5)][1] = g * linepattern[patt][i];
+			Iarray[(int)(x + 0.5)][(int)(y + 0.5)][2] = b * linepattern[patt][i];
 		}
 		else{
 			Iarray[(int)(x + 0.5)][(int)(y + 0.5)][0] = 255;
@@ -60,7 +60,7 @@ int main() {
 
 	lineDDA(10, 10, 50, 500, 255, 255, 0, 0);
 	lineDDA(30, 40, 100, 350, 0, 255, 255, 1);
-	lineDDA(400, 100, 5, 300, 255, 255, 0, 2);
+	lineDDA(400, 100, 5, 300, 255, 0, 255, 2);
 
 	fp = fopen("DDA.ppm", "wb");
 	fprintf(fp, "P6\n");
