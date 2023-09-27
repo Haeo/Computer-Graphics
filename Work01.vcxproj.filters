@@ -18,5 +18,8 @@
     <ClCompile Include="DDA.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Bresenham.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
