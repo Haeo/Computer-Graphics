@@ -14,6 +14,13 @@
 #define H 512
 
 int Iarray[W][H][3];
+int r, g, b;
+
+void setPixel(int x, int y) {
+	Iarray[x][y][0] = r;
+	Iarray[x][y][1] = g;
+	Iarray[x][y][2] = b;
+}
 
 void circlePlot(int Cx, int Cy, int x, int y) // 8´ëÄª
 {
@@ -42,3 +49,26 @@ void circleMidpoint(int xCenter, int yCenter, int radius)
 	}
 }
 
+int main()
+{
+	FILE* fp;
+		
+	// background color : white
+	for (int i = 0; i < W; i++) {
+		for (int j = 0; j < H; j++) {
+			Iarray[i][j][0] = 255;
+			Iarray[i][j][1] = 255;
+			Iarray[i][j][2] = 255;
+		}
+	}
+	
+
+	fp = fopen("MidPointCircle.ppm", "wb");
+	fprintf(fp, "P6\n");
+	fprintf(fp, "%d %d\n", W, H);
+	fprintf(fp, "255\n");
+	fwrite(Iarray, sizeof(char), H * W * 3, fp);
+	fclose(fp);
+
+	return 0;
+}
