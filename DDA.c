@@ -7,6 +7,8 @@
 #define W 512
 
 BYTE Iarray[W][H][3];
+
+// solid, dashed, dotted
 int linepattern[3][8] = { 1,1,1,1,1,1,1,1,
 						1,1,1,1,0,0,0,0,
 						1,0,1,0,1,0,1,0 };
@@ -42,14 +44,14 @@ void lineDDA(int x1, int y1, int x2, int y2, int r, int g, int b, int patt)
 		}
 		
 		i++;
-		if (i == 8) {
-			i = 0;
-		}
+		i %= 8;
 	}
 }
 
 int main() {
 	FILE* fp;
+
+	// background color : white
 	for (int i = 0; i < W; i++) {
 		for (int j = 0; j < H; j++) {
 			Iarray[i][j][0] = 255;
@@ -58,6 +60,7 @@ int main() {
 		}
 	}
 
+	// x1, y1, x2, y2, r, g, b, line pattern
 	lineDDA(10, 10, 50, 500, 255, 255, 0, 0);
 	lineDDA(30, 40, 100, 350, 0, 255, 255, 1);
 	lineDDA(400, 100, 5, 300, 255, 0, 255, 2);
