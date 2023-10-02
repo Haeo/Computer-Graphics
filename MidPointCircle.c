@@ -1,10 +1,3 @@
-//
-//3) 원 그리기
-//
-//- 제공된 중간점 기법 원그리기 소스를 이용하라.
-//
-//- 중심점, 반지름, 원색을 변화시켜 여러 개의 원을 그리기.
-
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,7 +6,7 @@
 #define W 512
 #define H 512
 
-int Iarray[W][H][3];
+BYTE Iarray[W][H][3];
 int r, g, b;
 
 void setPixel(int x, int y) {
@@ -49,10 +42,9 @@ void circleMidpoint(int xCenter, int yCenter, int radius)
 	}
 }
 
-int main()
-{
+int main() {
 	FILE* fp;
-		
+	
 	// background color : white
 	for (int i = 0; i < W; i++) {
 		for (int j = 0; j < H; j++) {
@@ -61,14 +53,20 @@ int main()
 			Iarray[i][j][2] = 255;
 		}
 	}
-	
 
-	fp = fopen("MidPointCircle.ppm", "wb");
+	r = 0, b = 255, g = 0;
+	circleMidpoint(250, 50, 30);
+	r = 255, b = 0, g = 0;
+	circleMidpoint(300, 300, 100);
+	r = 0, b = 0, g = 255;
+	circleMidpoint(250, 250, 200);
+
+	fp = fopen("MidPoint.ppm", "wb");
 	fprintf(fp, "P6\n");
 	fprintf(fp, "%d %d\n", W, H);
 	fprintf(fp, "255\n");
 	fwrite(Iarray, sizeof(char), H * W * 3, fp);
 	fclose(fp);
-
+	
 	return 0;
 }
