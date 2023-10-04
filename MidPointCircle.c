@@ -7,15 +7,15 @@
 #define H 512
 
 BYTE Iarray[W][H][3];
-int r, g, b;
+int r, g, b;	// RGB
 
-void setPixel(int x, int y) {
+void setPixel(int x, int y) { // set Pixel
 	Iarray[x][y][0] = r;
 	Iarray[x][y][1] = g;
 	Iarray[x][y][2] = b;
 }
 
-void circlePlot(int Cx, int Cy, int x, int y) // 8´ëÄª
+void circlePlot(int Cx, int Cy, int x, int y) // 8 symmetry
 {
 	setPixel(Cx + x, Cy + y);//marking function according to the output device
 	setPixel(Cx - x, Cy + y);
@@ -44,7 +44,7 @@ void circleMidpoint(int xCenter, int yCenter, int radius)
 
 int main() {
 	FILE* fp;
-	
+
 	// background color : white
 	for (int i = 0; i < W; i++) {
 		for (int j = 0; j < H; j++) {
@@ -54,6 +54,7 @@ int main() {
 		}
 	}
 
+	// MidPointCircle
 	r = 0, b = 255, g = 0;
 	circleMidpoint(250, 50, 30);
 	r = 255, b = 0, g = 0;
@@ -61,12 +62,13 @@ int main() {
 	r = 0, b = 0, g = 255;
 	circleMidpoint(250, 250, 200);
 
-	fp = fopen("MidPoint.ppm", "wb");
+	// File
+	fp = fopen("MidPointCircle.ppm", "wb");
 	fprintf(fp, "P6\n");
 	fprintf(fp, "%d %d\n", W, H);
 	fprintf(fp, "255\n");
 	fwrite(Iarray, sizeof(char), H * W * 3, fp);
 	fclose(fp);
-	
+
 	return 0;
 }
