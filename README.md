@@ -1,6 +1,8 @@
 # Computer-Graphics
 ## Computer-Graphics homework
 - - -
+<h5 id="home">HOME</h5>
+
 1. [DDA](#dda)
 2. [Bresenham](#bresenham)
 3. [Draw Circle](#draw-circle)
@@ -10,7 +12,7 @@
 7. [Sierpinski gasket Triangle](#sierpinski-gaski-triangle)
 8. [BST](#bst)
 ---
-### DDA
+### DDA <a href="#home">home</href>
 ![dda](https://github.com/Haeo/Computer-Graphics/assets/77920991/9a1f8bc3-c28c-4f2c-be30-54f44e632995)
 
 ### Bresenham
