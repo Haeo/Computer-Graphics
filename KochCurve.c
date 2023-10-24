@@ -64,7 +64,7 @@ int main() {
 	}
 
 	// loop count
-	int count = 5;
+	int count = 1;
 
 	// square shape
 	//kochCurve(400, 250, 250, 100, count);
@@ -73,14 +73,14 @@ int main() {
 	//kochCurve(250, 400, 400, 250, count);
 
 	// sparkle shape
-	kochCurve(450, 250, 280, 280, count);
-	kochCurve(280, 280, 250, 450, count);
-	kochCurve(250, 450, 220, 280, count);
-	kochCurve(220, 280, 50, 250, count);
-	kochCurve(50, 250, 220, 220, count);
-	kochCurve(220, 220, 250, 50, count);
-	kochCurve(250, 50, 280, 220, count);
-	kochCurve(280, 220, 450, 250, count);
+	kochCurve(280, 280, 450, 250, count);
+	kochCurve(250, 450, 280, 280, count);
+	kochCurve(220, 280, 250, 450, count);
+	kochCurve(50, 250, 220, 280, count);
+	kochCurve(220, 220, 50, 250, count);
+	kochCurve(250, 50, 220, 220, count);
+	kochCurve(280, 220, 250, 50, count);
+	kochCurve(450, 250, 280, 220, count);
 	
 	/*
 	400 250 280 280
