@@ -50,4 +50,5 @@
 ### BST
 ###### [HOME](#home)
 
+![bst](https://github.com/Haeo/Computer-Graphics/assets/77920991/1f2448d6-3194-4605-a194-d69be2d935db)
 ---
