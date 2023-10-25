@@ -64,7 +64,7 @@ int main() {
 	}
 
 	// loop count
-	int count = 1;
+	int count = 5;
 
 	// square shape
 	//kochCurve(400, 250, 250, 100, count);
@@ -81,18 +81,6 @@ int main() {
 	kochCurve(250, 50, 220, 220, count);
 	kochCurve(280, 220, 250, 50, count);
 	kochCurve(450, 250, 280, 220, count);
-	
-	/*
-	400 250 280 280
-	280 280 250 400
-	250 400 220 280
-	220 280 100 250
-	100 250 220 220
-	220 220 250 100
-	250 100 280 220
-	280 220 400 250
-	*/
-	
 	
 	// File
 	fp = fopen("KochCurve.pgm", "wb");
