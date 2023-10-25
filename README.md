@@ -40,7 +40,7 @@
 ### Koch Curve
 ###### [HOME](#home)
 ##### Sparkle Shape Result
-![kochcurve](https://github.com/Haeo/Computer-Graphics/assets/77920991/a4103e59-da01-49c2-91bb-2dc9cee16674)
+![kochcurve](https://github.com/Haeo/Computer-Graphics/assets/77920991/449ec129-23af-4ce6-b8fd-fd3cb692231a)
 ---
 
 ### Sierpinski gaski Triangle
